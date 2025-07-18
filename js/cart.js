@@ -15,7 +15,7 @@ function renderCart() {
     return `
       <div class="row align-items-center mb-3 border-bottom pb-2">
         <div class="col-2">
-          <img src="${item.image}" class="img-fluid" style="max-width:60px;">
+          <img src="../images/${item.image}" class="img-fluid" style="max-width:60px;">
         </div>
         <div class="col-4">${item.title}</div>
         <div class="col-2">$${item.price}</div>

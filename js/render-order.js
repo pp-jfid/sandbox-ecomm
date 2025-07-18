@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return `
       <tr>
         <td>
-          <img src="${imageSrc}" alt="${item.title}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;">
+          <img src="../images/${imageSrc}" alt="${item.title}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;">
         </td>
         <td>${item.title} <strong class="mx-2">x</strong> ${item.quantity}</td>
         <td>$${itemTotal.toFixed(2)}</td>
