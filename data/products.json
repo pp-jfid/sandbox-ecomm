@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Nordic Chair",
+    "slug": "nordic-chair-1",
+    "price": "50.00",
+    "image": "images/product-3.png",
+    "description": "A stylish and comfortable Nordic chair, perfect for modern interiors. Crafted with quality materials for lasting durability.",
+    "category": "Chairs",
+    "variant": "Oak / Blue"
+  },
+  {
+    "id": "2",
+    "title": "Nordic Chair",
+    "slug": "nordic-chair-2",
+    "price": "50.00",
+    "image": "images/product-1.png",
+    "description": "Experience Scandinavian design with this elegant Nordic chair. Ideal for dining rooms, offices, or living spaces.",
+    "category": "Chairs",
+    "variant": "Walnut / Grey"
+  },
+  {
+    "id": "3",
+    "title": "Kruzo Aero Chair",
+    "slug": "kruzo-aero-chair-3",
+    "price": "78.00",
+    "image": "images/product-2.png",
+    "description": "The Kruzo Aero Chair features a modern silhouette and ergonomic support, making it a great choice for any workspace.",
+    "category": "Chairs",
+    "variant": "Plastic / Black"
+  },
+  {
+    "id": "4",
+    "title": "Ergonomic Chair",
+    "slug": "ergonomic-chair-4",
+    "price": "43.00",
+    "image": "images/product-3.png",
+    "description": "Designed for comfort, this ergonomic chair provides excellent lumbar support and is perfect for long hours of sitting.",
+    "category": "Office Chairs",
+    "variant": "Mesh / Grey"
+  }
+]

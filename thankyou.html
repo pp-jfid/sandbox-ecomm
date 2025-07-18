@@ -7,14 +7,17 @@
 */ -->
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+	<head>
+		<script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js"
+		data-culture="EN" data-gcm-version="2.0" type="text/javascript"></script>
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="author" content="Untree.co">
+		<link rel="shortcut icon" href="favicon.png">
+
+		<meta name="description" content="" />
+		<meta name="keywords" content="bootstrap, bootstrap4" />
 
 		<!-- Bootstrap CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -204,6 +207,40 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			// Retrieve the last cart and generate a transaction ID (or use your own logic)
+			const lastCart = JSON.parse(localStorage.getItem('lastCart') || '[]');
+			const transactionId = 'ORDER-' + Date.now(); // Or use your real order ID
+
+			// Calculate total value
+			const value = lastCart.reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0);
+
+			// Prepare items array for GA4
+			const items = lastCart.map(item => ({
+			  item_id: item.id,
+			  item_name: item.title,
+			  price: parseFloat(item.price),
+			  item_brand: 'Furni',
+			  item_category: item.category || '',
+			  item_variant: item.variant || '',
+			  quantity: item.quantity,
+			  item_image: item.image
+			}));
+
+			// Push purchase event to dataLayer
+			window.dataLayer.push({
+			  event: 'purchase',
+			  ecommerce: {
+				transaction_id: transactionId,
+				affiliation: 'Furni Online Store',
+				value: value,
+				currency: 'USD',
+				items: items
+			  }
+			});
+		</script>
 	</body>
 
 </html>
