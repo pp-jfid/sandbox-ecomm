@@ -10,7 +10,7 @@ function createProductHTML(product) {
          data-category="${product.category}"
          data-variant="${product.variant}"
          data-slug="${product.slug}">
-        <img src="../images/${product.image}" class="img-fluid product-thumbnail">
+        <img src="images/${product.image}" class="img-fluid product-thumbnail">
         <h3 class="product-title">${product.title}</h3>
         <strong class="product-price">$${product.price}</strong>
         <span class="icon-cross">
