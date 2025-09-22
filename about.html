@@ -71,13 +71,25 @@
 								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 							</div>
 
-							<!-- Embedded YouTube Video -->
-							<div class="mt-4">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=P5ydcInHotDFNzyD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+							<!-- script to hide YT iframe -->
+							<script>
+							window.addEventListener('CookieInformationConsentGiven', function(event) {
+								if (CookieInformation.getConsentGivenFor('cookie_cat_category')) {
+								<!-- Embedded YouTube Video -->
+								<div class="mt-4">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=P5ydcInHotDFNzyD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+								}
+							}, false);
+							</script>
+							<!-- div for masking -->
+							<div class="consent-placeholder"  data-category="cookie_cat_marketing"  onClick="CookieConsent.renew()"> 
+							You have not yet consent to marketing
 							</div>
-							<div class="consent-placeholder"  data-category="cookie_cat_marketing"  onClick="CookieConsent.renew()">
-								You have not yet consent to marketing
-							</div>
+							<!-- end of yt shenanigans -->
+
+
 						</div>
 						<div class="col-lg-7">
 							<div class="hero-img-wrap">
