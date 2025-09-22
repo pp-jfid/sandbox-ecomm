@@ -72,15 +72,25 @@
 							</div>
 
 
+							<div class="mt-4">
 							<!-- script to hide YT iframe -->
 							<script>
 							window.addEventListener('CookieInformationConsentGiven', function(event) {
-								if (CookieInformation.getConsentGivenFor('cookie_cat_category')) {
-								<!-- Embedded YouTube Video -->
-								<div class="mt-4">
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw?si=P5ydcInHotDFNzyD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-								</div>
-								}
+									if (CookieInformation.getConsentGivenFor('cookie_cat_marketing')) {
+										var placeholder = document.querySelector('.consent-placeholder');
+										if (placeholder) {
+											var iframe = document.createElement('iframe');
+											iframe.width = "560";
+											iframe.height = "315";
+											iframe.src = "https://www.youtube.com/embed/jNQXAC9IVRw?si=P5ydcInHotDFNzyD";
+											iframe.title = "YouTube video player";
+											iframe.frameBorder = "0";
+											iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+											iframe.referrerPolicy = "strict-origin-when-cross-origin";
+											iframe.allowFullscreen = true;
+											placeholder.parentNode.replaceChild(iframe, placeholder);
+										}
+									}
 							}, false);
 							</script>
 							<!-- div for masking -->
@@ -88,6 +98,7 @@
 							You have not yet consent to marketing
 							</div>
 							<!-- end of yt shenanigans -->
+							</div>
 
 
 						</div>
